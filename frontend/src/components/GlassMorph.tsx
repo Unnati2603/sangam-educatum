@@ -24,9 +24,7 @@ export default function GlassMorph({ text }: GlassMorphProps) {
       }}
     >
       <Card
-        effectColor="#ffffff"
-        color="rgba(255, 255, 255, 0.25)"
-        blur={20}
+        blur={10}
         style={{
           width: '100%',
           height: '100%',
@@ -38,7 +36,7 @@ export default function GlassMorph({ text }: GlassMorphProps) {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          color: '#000',
+          color: '#fff',
           fontSize: '2.5rem',
           fontWeight: 'bold',
           textShadow: '0 2px 16px rgba(0,0,0,0.3)',
