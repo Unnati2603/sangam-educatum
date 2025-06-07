@@ -56,8 +56,8 @@
 
 
 
-import IriBg from '@/components/IriBg';
-import NoiseBg from '@/components/NoiseBg';
+import IriBg from '@/components/Iridescence/IriBg';
+import NoiseBg from '@/components/Noise/NoiseBg';
 import { HEADER_TEXT } from './constants';
 import './Header.css'; // import the external CSS
 
