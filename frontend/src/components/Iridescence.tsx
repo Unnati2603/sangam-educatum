@@ -63,27 +63,51 @@ export default function Iridescence({
 }: IridescenceProps) {
   const ctnDom = useRef<HTMLDivElement>(null);
   const mousePos = useRef({ x: 0.5, y: 0.5 });
+  // Add refs for optimization
+  const frameCount = useRef(0);
+  const lastFrameTime = useRef(0);
+  const targetFPS = 30; // Limit to 30 FPS for better performance
+  const frameInterval = 1000 / targetFPS;
+  const isVisibleRef = useRef(true);
 
   useEffect(() => {
     if (!ctnDom.current) return;
     const ctn = ctnDom.current;
-    const renderer = new Renderer();
+    const renderer = new Renderer({ dpr: Math.min(2, window.devicePixelRatio) }); // Limit DPR for performance
     const gl = renderer.gl;
     gl.clearColor(1, 1, 1, 1);
 
     let program: Program;
 
+    // Visibility observer to pause rendering when not visible
+    const visibilityObserver = new IntersectionObserver(
+      (entries) => {
+        isVisibleRef.current = entries[0].isIntersecting;
+      },
+      { threshold: 0.1 }
+    );
+    visibilityObserver.observe(ctn);
+
+    // Debounced resize handler
+    let resizeTimeout: number;
     function resize() {
-      const scale = 1;
-      renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);
-      if (program) {
-        program.uniforms.uResolution.value = new Color(
-          gl.canvas.width,
-          gl.canvas.height,
-          gl.canvas.width / gl.canvas.height
-        );
+      if (resizeTimeout) {
+        window.clearTimeout(resizeTimeout);
       }
+
+      resizeTimeout = window.setTimeout(() => {
+        const scale = Math.min(1, 1920 / window.innerWidth); // Scale down on large screens
+        renderer.setSize(ctn.offsetWidth * scale, ctn.offsetHeight * scale);
+        if (program) {
+          program.uniforms.uResolution.value = new Color(
+            gl.canvas.width,
+            gl.canvas.height,
+            gl.canvas.width / gl.canvas.height
+          );
+        }
+      }, 200); // Debounce resize events
     }
+    
     window.addEventListener("resize", resize, false);
     resize();
 
@@ -112,13 +136,31 @@ export default function Iridescence({
 
     function update(t: number) {
       animateId = requestAnimationFrame(update);
-      program.uniforms.uTime.value = t * 0.001;
-      renderer.render({ scene: mesh });
+      
+      // Skip frames to limit FPS and save resources
+      const now = performance.now();
+      const elapsed = now - lastFrameTime.current;
+      
+      // Only render if visible and enough time has passed since last frame
+      if (isVisibleRef.current && elapsed > frameInterval) {
+        frameCount.current++;
+        lastFrameTime.current = now - (elapsed % frameInterval);
+        program.uniforms.uTime.value = t * 0.001;
+        renderer.render({ scene: mesh });
+      }
     }
     animateId = requestAnimationFrame(update);
     ctn.appendChild(gl.canvas);
 
+    // Throttle mousemove handler to improve performance
+    let lastMoveTime = 0;
     function handleMouseMove(e: MouseEvent) {
+      const now = performance.now();
+      if (now - lastMoveTime < 16) { // ~60fps max for mouse movement
+        return;
+      }
+      lastMoveTime = now;
+      
       const rect = ctn.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = 1.0 - (e.clientY - rect.top) / rect.height;
@@ -126,9 +168,16 @@ export default function Iridescence({
       program.uniforms.uMouse.value[0] = x;
       program.uniforms.uMouse.value[1] = y;
     }
+
     if (mouseReact) {
       ctn.addEventListener("mousemove", handleMouseMove);
     }
+
+    // Add document visibility check
+    function handleVisibilityChange() {
+      isVisibleRef.current = document.visibilityState === 'visible';
+    }
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     return () => {
       cancelAnimationFrame(animateId);
@@ -136,10 +185,15 @@ export default function Iridescence({
       if (mouseReact) {
         ctn.removeEventListener("mousemove", handleMouseMove);
       }
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      visibilityObserver.disconnect();
+      if (resizeTimeout) {
+        window.clearTimeout(resizeTimeout);
+      }
       ctn.removeChild(gl.canvas);
       gl.getExtension("WEBGL_lose_context")?.loseContext();
     };
-  }, [color, speed, amplitude, mouseReact]);
+  }, [color, speed, amplitude, mouseReact, targetFPS, frameInterval]);
 
   return (
     <div
