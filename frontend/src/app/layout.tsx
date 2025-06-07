@@ -9,8 +9,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
+      <body style={{ 
+        overflowX: 'hidden', 
+        overflowY: 'auto', // Enable vertical scrolling
+        maxWidth: '100%', 
+        margin: 0, 
+        padding: 0,
+        height: 'auto', // Allow body to expand with content
+        minHeight: '100vh' // Ensure it at least fills the viewport
+      }}>
+        {children}
+      </body>
     </html>
   )
 }

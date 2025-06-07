@@ -6,10 +6,10 @@ import Iridescence from './Iridescence';
 export default memo(function IriBg() {
   return (
     <Iridescence
-      color={[0.9, 0.92, 0.95]}
-      mouseReact={false}
-      amplitude={0.1}
-      speed={0.7} // Reduced speed for better performance
+      color={[0.85, 0.90, 0.92]}
+      mouseReact={true}
+      amplitude={0.9}
+      speed={0.9} // Reduced speed for better performance
     />
   );
 });
