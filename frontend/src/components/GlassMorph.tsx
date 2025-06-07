@@ -1,4 +1,5 @@
 "use client";
+
 import React from 'react';
 import { Card } from '@tsamantanis/react-glassmorphism';
 import '@tsamantanis/react-glassmorphism/dist/index.css';
@@ -21,33 +22,31 @@ export default function GlassMorph({ text }: GlassMorphProps) {
         alignItems: 'center',
         justifyContent: 'center',
       }}
-    >      <Card
+    >
+      <Card
         effectColor="#ffffff"
         color="rgba(255, 255, 255, 0.25)"
         blur={20}
-       
         style={{
           width: '100%',
           height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '2rem',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          color: '#000',
+          fontSize: '2.5rem',
+          fontWeight: 'bold',
+          textShadow: '0 2px 16px rgba(0,0,0,0.3)',
+          textAlign: 'center',
         }}
       >
-        <div
-          style={{
-            color: '#000',
-            fontSize: '2.5rem',
-            fontWeight: 'bold',
-            textShadow: '0 2px 16px rgba(0,0,0,0.3)',
-            textAlign: 'center',
-            width: '100%',
-          }}
-        >
-          {text}
-        </div>
-      </Card>
+        {text}
+      </div>
     </div>
   );
 }
