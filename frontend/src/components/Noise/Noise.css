@@ -6,7 +6,7 @@
   height: 100vh;
   pointer-events: none; /* This allows interactions with elements below */
   display: block;
-  z-index: -1;
+  z-index: 1;
   overflow: hidden;
   max-width: 100%; /* Ensure it doesn't exceed parent width */
   box-sizing: border-box;

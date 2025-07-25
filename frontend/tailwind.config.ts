@@ -8,6 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'rich-black': '#0D1B2A',
+        'oxford-blue': '#1B263B',
+        'yinmn-blue': '#415A77',
+        'silver-lake': '#778DA9',
+        'platinum': '#E0E1DD',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

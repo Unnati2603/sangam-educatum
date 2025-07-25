@@ -6,7 +6,7 @@ import Noise from "./Noise"
 export default memo(function NoiseBg() {
   return (
     <Noise
-      patternSize={150} // Reduced size for better performance
+      patternSize={50} // Reduced size for better performance
       patternScaleX={1}
       patternScaleY={1}
       patternRefreshInterval={60} // Slower refresh rate for better performance
@@ -14,3 +14,9 @@ export default memo(function NoiseBg() {
     />
   );
 });
+
+      // patternSize={75} // Even smaller size for more detailed noise
+      // patternScaleX={1}
+      // patternScaleY={1}
+      // patternRefreshInterval={40} // Faster refresh for more dynamic effect
+      // patternAlpha={45} // Much more visible
