@@ -2,8 +2,16 @@
 
 import Header from './components/header/header';
 
+// Define interface for Section component props
+interface SectionProps {
+  title: string;
+  content: React.ReactNode;
+  bgColor?: string;
+  textColor?: string;
+}
+
 // Example section component that you can duplicate for more content
-const Section = ({ title, content, bgColor = '#ffffff', textColor = '#000000' }) => {
+const Section = ({ title, content, bgColor = '#ffffff', textColor = '#000000' }: SectionProps) => {
   return (
     <section style={{
       padding: '4rem 2rem',
