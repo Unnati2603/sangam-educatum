@@ -11,9 +11,11 @@ export default memo(function NoiseBg() {
       patternScaleY={1}
       patternRefreshInterval={60} // Slower refresh rate for better performance
       patternAlpha={10}
+      // patternSize={160}
     />
   );
 });
+
 
       // patternSize={75} // Even smaller size for more detailed noise
       // patternScaleX={1}
