@@ -1,19 +1,12 @@
-import { Menu, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import cm from "@/assets/cm.jpeg";
 import cm2 from "@/assets/cm2.jpeg";
+import Nav from "./Nav";
 
 export default function Hero() {
   return (
     <section className="relative h-screen w-screen bg-white text-black font-serif overflow-hidden">
-      {/* Transparent Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-6 bg-white/10 backdrop-blur-sm">
-        <h1 className="text-xl font-bold">sukabeli.</h1>
-        <div className="flex items-center space-x-4 text-black">
-          <Menu className="w-6 h-6" />
-          <ShoppingCart className="w-6 h-6" />
-        </div>
-      </nav>
+      <Nav />
 
       {/* Content */}
       <div className="grid grid-cols-1 md:grid-cols-2 h-screen px-6 md:px-12 pt-24 pb-12 gap-12">
