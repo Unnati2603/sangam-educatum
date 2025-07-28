@@ -9,6 +9,7 @@ export default function PerfectComp() {
       <NoiseBg />
       <div className="relative z-0">
         <Hero />
+        <Hero />
       </div>
     </main>
   );

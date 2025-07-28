@@ -5,9 +5,9 @@ import cm2 from "@/assets/cm2.jpeg";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-white text-black font-serif overflow-hidden">
+    <section className="relative h-screen w-screen bg-white text-black font-serif overflow-hidden">
       {/* Transparent Navbar */}
-      <nav className="absolute top-0 left-0 w-full z-10 flex items-center justify-between px-6 md:px-12 py-6 bg-white/10 backdrop-blur-md">
+      <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-12 py-6 bg-white/10 backdrop-blur-sm">
         <h1 className="text-xl font-bold">sukabeli.</h1>
         <div className="flex items-center space-x-4 text-black">
           <Menu className="w-6 h-6" />
@@ -16,9 +16,9 @@ export default function Hero() {
       </nav>
 
       {/* Content */}
-      <div className="grid grid-cols-1 md:grid-cols-2 px-6 md:px-12 py-28 md:py-36 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 h-screen px-6 md:px-12 pt-24 pb-12 gap-12">
         {/* Left Side */}
-        <div className="flex flex-col justify-center space-y-10">
+        <div className="flex flex-col justify-center space-y-8 overflow-y-auto">
           {/* Top Text and Image */}
           <div className="space-y-2 max-w-md">
             <div className="flex items-start space-x-4">
@@ -27,7 +27,7 @@ export default function Hero() {
                 alt="Closeup"
                 width={96}
                 height={80}
-                className="object-cover rounded"
+                className="object-cover rounded shrink-0"
               />
               <p className="text-xs text-gray-600 leading-snug">
                 The iconic multicoloured chevron pattern, among the many style
@@ -50,13 +50,13 @@ export default function Hero() {
         </div>
 
         {/* Right Side Image */}
-        <div className="flex justify-center items-center relative">
+        <div className="relative h-[calc(100vh-9rem)] w-full flex items-center justify-center">
           <Image
             src={cm}
             alt="Model"
             width={768}
             height={512}
-            className="rounded-md object-cover max-w-full md:max-w-md"
+            className="rounded-md object-cover w-full h-full"
           />
           {/* Vertical Text */}
           <div className="absolute right-0 bottom-10 text-xs tracking-widest rotate-90 origin-bottom-right text-gray-600">
