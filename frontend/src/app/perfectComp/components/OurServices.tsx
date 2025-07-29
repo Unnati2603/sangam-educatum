@@ -65,7 +65,7 @@ export default function OurServices() {
   ];
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-rich-black">
+    <section id="services" className="py-20 px-6 md:px-12 bg-rich-black">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-semibold text-platinum mb-4">

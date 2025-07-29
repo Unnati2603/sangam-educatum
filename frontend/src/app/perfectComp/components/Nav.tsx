@@ -1,3 +1,4 @@
+"use client";
 import { Menu, ShoppingCart } from "lucide-react";
 
 export default function Nav() {

@@ -35,7 +35,7 @@ export default function Hero() {
           </h2>
 
           {/* View Collection Button */}
-          <Button>
+          <Button href="#services">
             OUR SERVICES
           </Button>
 
