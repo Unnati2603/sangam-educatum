@@ -1,5 +1,6 @@
 import NoiseBg from '@/components/Noise/NoiseBg';
 import Hero from './components/Hero';
+import OurServices from './components/OurServices';
 // import './perfectComp.css';
 
 export default function PerfectComp() {
@@ -9,7 +10,7 @@ export default function PerfectComp() {
       <NoiseBg />
       <div className="relative z-0">
         <Hero />
-        <Hero />
+        <OurServices />
       </div>
     </main>
   );

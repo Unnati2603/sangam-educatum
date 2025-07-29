@@ -23,14 +23,14 @@ export default function Hero() {
                 height={280}
                 className="object-cover rounded shrink-0"
           />
-            <p className="text-sm text-yinmn-blue leading-snug">
-              Your one-stop destination for comprehensive computer solutions. From expert hardware repairs and maintenance to the latest software installations. We service PCs, laptops, security cameras, and provide premium hardware accessories.
+            <p className="text-sm md:text-base text-yinmn-blue ">
+              Your one-stop destination for comprehensive computer solutions. We service PCs, laptops, security cameras, and provide premium hardware accessories.
             </p>
             </div>
             <div className="w-60 h-[2px] bg-silver-lake rounded-full" />
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-semibold max-w-lg leading-tight text-rich-black">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-rich-black leading-snug tracking-tight">
             Perfect Computer Services
           </h2>
 
