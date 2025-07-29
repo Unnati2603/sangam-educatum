@@ -2,6 +2,7 @@ import Image from "next/image";
 import cm from "@/assets/cm.jpeg";
 import cm2 from "@/assets/cm2.jpeg";
 import Nav from "./Nav";
+import Button from "./Button";
 
 export default function Hero() {
   return (
@@ -18,27 +19,26 @@ export default function Hero() {
           <Image
             src={cm2}
                 alt="Closeup"
-                width={96}
-                height={80}
+                width={240}
+                height={280}
                 className="object-cover rounded shrink-0"
           />
-            <p className="text-xs text-gray-600 leading-snug">
-              The iconic multicoloured chevron pattern, among the many style
-              prerogatives that have made the name famous over time, is
-              transformed into a tiny succession of small polychrome
+            <p className="text-sm text-yinmn-blue leading-snug">
+              Your one-stop destination for comprehensive computer solutions. From expert hardware repairs and maintenance to the latest software installations. We service PCs, laptops, security cameras, and provide premium hardware accessories.
             </p>
             </div>
-            <div className="w-28 h-[2px] bg-teal-400 rounded-full" />
+            <div className="w-60 h-[2px] bg-silver-lake rounded-full" />
           </div>
 
-          <h2 className="text-5xl md:text-6xl font-semibold max-w-lg leading-tight">
-            The disruptive philosophy of the new textile icon
+          <h2 className="text-5xl md:text-6xl font-semibold max-w-lg leading-tight text-rich-black">
+            Perfect Computer Services
           </h2>
 
           {/* View Collection Button */}
-          <button className="w-fit px-6 py-3 bg-black text-white rounded-full font-medium text-sm tracking-wide hover:bg-neutral-900 transition">
-            VIEW COLLECTION
-          </button>
+          <Button>
+            OUR SERVICES
+          </Button>
+
         </div>
 
         {/* Right side big image */}
