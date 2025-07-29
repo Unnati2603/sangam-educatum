@@ -15,23 +15,22 @@ export default function Hero() {
           {/* Top Text and Image */}
           <div className="space-y-2 max-w-md">
             <div className="flex items-start space-x-4">
-              <Image
-                src={cm2}
+          <Image
+            src={cm2}
                 alt="Closeup"
                 width={96}
                 height={80}
                 className="object-cover rounded shrink-0"
-              />
-              <p className="text-xs text-gray-600 leading-snug">
-                The iconic multicoloured chevron pattern, among the many style
-                prerogatives that have made the name famous over time, is
-                transformed into a tiny succession of small polychrome
-              </p>
+          />
+            <p className="text-xs text-gray-600 leading-snug">
+              The iconic multicoloured chevron pattern, among the many style
+              prerogatives that have made the name famous over time, is
+              transformed into a tiny succession of small polychrome
+            </p>
             </div>
             <div className="w-28 h-[2px] bg-teal-400 rounded-full" />
           </div>
 
-          {/* Main Headline */}
           <h2 className="text-5xl md:text-6xl font-semibold max-w-lg leading-tight">
             The disruptive philosophy of the new textile icon
           </h2>
@@ -42,25 +41,24 @@ export default function Hero() {
           </button>
         </div>
 
-        {/* Right Side Image */}
-        <div className="relative h-[calc(100vh-9rem)] w-full flex items-center justify-center">
+        {/* Right side big image */}
+        <div className="relative h-full w-full flex items-center justify-center">
           <Image
             src={cm}
-            alt="Model"
-            width={768}
-            height={512}
-            className="rounded-md object-cover w-full h-full"
+            alt="Main model"
+            fill
+            className="object-cover rounded-md"
           />
-          {/* Vertical Text */}
+
           <div className="absolute right-0 bottom-10 text-xs tracking-widest rotate-90 origin-bottom-right text-gray-600">
             LOOK TO GO
           </div>
         </div>
       </div>
 
-      {/* Decorative Number */}
+      {/* Background number */}
       <div className="absolute bottom-0 left-6 text-[10rem] text-orange-200 font-bold select-none opacity-20 hidden md:block">
-        03
+        01
       </div>
     </section>
   );
