@@ -23,13 +23,9 @@ export default function GlassMorph({ text }: GlassMorphProps) {
         justifyContent: 'center',
       }}
     >
-      <Card
-        blur={10}
-        style={{
-          width: '100%',
-          height: '100%',
-        }}
-      />
+      <div style={{ width: '100%', height: '100%' }}>
+        <Card blur={10} />
+      </div>
       <div
         style={{
           position: 'absolute',

@@ -73,7 +73,7 @@ export default function OurServices() {
           </h2>
           <p className="text-silver-lake max-w-2xl mx-auto">
             Comprehensive computer solutions for all your technology needs. From repairs to upgrades,
-            we've got you covered with professional service and expert care.
+            we&apos;ve got you covered with professional service and expert care.
           </p>
         </div>
 
