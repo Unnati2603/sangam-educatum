@@ -6,11 +6,11 @@ import Noise from "./Noise"
 export default memo(function NoiseBg() {
   return (
     <Noise
-      patternSize={75} // Reduced size for better performance
+      patternSize={20} // Reduced size for better performance
       patternScaleX={1}
       patternScaleY={1}
       patternRefreshInterval={60} // Slower refresh rate for better performance
-      patternAlpha={20}
+      patternAlpha={5}
     />
   );
 });

@@ -13,6 +13,7 @@
     "@tsamantanis/react-glassmorphism": "^1.1.2",
     "framer-motion": "^12.23.9",
     "fullpage.js": "^4.0.25",
+    "lucide-react": "^0.560.0",
     "next": "14.2.3",
     "ogl": "^1.0.11",
     "react": "^18",
