@@ -1,18 +1,13 @@
-import "./global.css";
-import PerfectComp from './perfectComp/page';
+import Hero from "./Home/Hero";
+import WhyChooseUs from "./Home/WhyChooseUs";
+import OurServices from "./Home/OurServices";
 
 export default function Home() {
-  // Rendering PerfectComp directly on the home page
-  return <PerfectComp />;
-  
-  // Original code is commented out
-  /*
   return (
-    <div className="app">
-      <h1>Sangam Educatum</h1>
-      <button> Educational Services</button>
-      <button> IT Services</button>
-    </div>
+    <>
+      <Hero />
+      <WhyChooseUs />
+      <OurServices />
+    </>
   );
-  */
 }

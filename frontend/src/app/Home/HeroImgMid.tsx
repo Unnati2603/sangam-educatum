@@ -1,7 +1,7 @@
 import Image from "next/image";
 import cm from "@/assets/cm.jpeg";
 import cm2 from "@/assets/cm2.jpeg";
-import Nav from "./Nav";
+import Nav from "../../components/Nav";
 
 export default function Hero() {
   return (

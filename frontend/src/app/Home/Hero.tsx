@@ -1,14 +1,11 @@
 import Image from "next/image";
 import cm from "@/assets/cm.jpeg";
 import cm2 from "@/assets/cm2.jpeg";
-import Nav from "./Nav";
-import Button from "./Button";
+import Button from "../../components/Button";
 
 export default function Hero() {
   return (
     <section className="relative h-screen w-screen bg-white text-black font-serif overflow-hidden">
-      <Nav />
-
       {/* Content */}
       <div className="grid grid-cols-1 md:grid-cols-2 h-screen px-6 md:px-12 pt-24 pb-12 gap-12">
         {/* Left Side */}
@@ -16,16 +13,18 @@ export default function Hero() {
           {/* Top Text and Image */}
           <div className="space-y-2 max-w-md">
             <div className="flex items-start space-x-4">
-          <Image
-            src={cm2}
+              <Image
+                src={cm2}
                 alt="Closeup"
                 width={240}
                 height={280}
                 className="object-cover rounded shrink-0"
-          />
-            <p className="text-sm md:text-base text-yinmn-blue ">
-              Your one-stop destination for comprehensive computer solutions. We service PCs, laptops, security cameras, and provide premium hardware accessories.
-            </p>
+              />
+              <p className="text-sm md:text-base text-yinmn-blue ">
+                Your one-stop destination for comprehensive computer solutions.
+                We service PCs, laptops, security cameras, and provide premium
+                hardware accessories.
+              </p>
             </div>
             <div className="w-60 h-[2px] bg-silver-lake rounded-full" />
           </div>
@@ -35,10 +34,7 @@ export default function Hero() {
           </h2>
 
           {/* View Collection Button */}
-          <Button href="#services">
-            OUR SERVICES
-          </Button>
-
+          <Button href="#services">OUR SERVICES</Button>
         </div>
 
         {/* Right side big image */}

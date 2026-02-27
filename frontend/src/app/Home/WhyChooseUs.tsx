@@ -15,11 +15,12 @@ function ChooseCard({ title, description, icon }: ChooseCardProps) {
         <div className="p-4 bg-yinmn-blue rounded-lg text-platinum w-fit group-hover:scale-110 transition-transform">
           {icon}
         </div>
-      </div>
-      <h3 className="text-xl font-semibold text-platinum group-hover:text-silver-lake transition-colors mb-3">
+        <h3 className="text-xl font-semibold text-rich-black group-hover:text-silver-lake transition-colors mb-3">
         {title}
-      </h3>
-      <p className="text-sm text-silver-lake leading-relaxed group-hover:text-platinum transition-colors">
+        </h3>
+      </div>
+      
+      <p className="text-sm text-oxford-blue leading-relaxed group-hover:text-platinum transition-colors">
         {description}
       </p>
     </div>
@@ -61,13 +62,13 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section id="why-choose-us" className="py-20 px-6 md:px-12 bg-oxford-blue/10">
+    <section id="why-choose-us" className="py-20 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold text-platinum mb-4">
+          <h2 className="text-4xl md:text-5xl font-semibold text-rich-black mb-4">
             Why Choose Perfect Computer Services?
           </h2>
-          <p className="text-silver-lake max-w-2xl mx-auto text-lg">
+          <p className="text-oxford-blue max-w-2xl mx-auto text-lg">
             We&apos;re not just another repair shop. Here&apos;s what sets us apart and why customers trust us 
             with their most important devices.
           </p>
