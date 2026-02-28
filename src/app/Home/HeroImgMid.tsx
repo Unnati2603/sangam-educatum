@@ -42,9 +42,9 @@ export default function HeroImgMid() {
       </div>
 
       {/* Background number */}
-      <div className="absolute bottom-0 left-6 text-[10rem] text-orange-200 font-bold select-none opacity-20 hidden md:block">
+      {/* <div className="absolute bottom-0 left-6 text-[10rem] text-orange-200 font-bold select-none opacity-20 hidden md:block">
         01
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -13,8 +13,13 @@ export default function Hero() {
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen px-6 md:px-12 pt-24 pb-12 gap-8 lg:gap-12">
         {/* Left Side */}
         <div className="flex flex-col justify-center space-y-8">
-          {/* Top: Image + Description */}
-          <div className="flex flex-col sm:flex-row items-start gap-6 w-full">
+          {/* Heading - shown first on mobile, back in normal flow on lg */}
+          <h2 className="order-first lg:order-none text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-rich-black tracking-tight">
+            Perfect Computer Services
+          </h2>
+
+          {/* Image + Description */}
+          <div className="order-2 lg:order-none flex flex-col sm:flex-row sm:items-center items-start gap-6 w-full">
             <Image
               src={cm2}
               alt="Computer setup"
@@ -30,15 +35,12 @@ export default function Hero() {
           </div>
 
           {/* Divider */}
-          <div className="w-40 sm:w-60 h-[2px] bg-silver-lake rounded-full" />
-
-          {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-rich-black tracking-tight">
-            Perfect Computer Services
-          </h2>
+          <div className="order-3 lg:order-none w-40 sm:w-60 h-[2px] bg-silver-lake rounded-full" />
 
           {/* CTA Button */}
-          <Button href="#services">OUR SERVICES</Button>
+          <div className="order-4 lg:order-none">
+            <Button href="#services">OUR SERVICES</Button>
+          </div>
         </div>
 
         {/* Right side big image - hidden on mobile, visible on lg+ */}
@@ -52,10 +54,11 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* removed as was overlapping a lot */}
       {/* Background number */}
-      <div className="absolute bottom-0 left-6 text-[10rem] text-orange-200 font-bold select-none opacity-20 hidden md:block">
+      {/* <div className="absolute bottom-0 left-6 text-[10rem] text-orange-200 font-bold select-none opacity-20 hidden md:block">
         01
-      </div>
+      </div> */}
     </section>
   );
 }

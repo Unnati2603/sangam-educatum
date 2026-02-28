@@ -9,7 +9,7 @@ export default function Nav() {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
       <div className="flex items-center justify-between px-6 md:px-12 py-4">
-        <h1 className="text-xl font-bold text-rich-black">Sangam</h1>
+        <h1 className="text-xl font-bold text-rich-black">PCS</h1>
 
         {/* Desktop nav links */}
         <div className="hidden md:flex items-center space-x-8 text-rich-black">
