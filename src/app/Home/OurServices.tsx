@@ -1,4 +1,13 @@
-import { Laptop, Monitor, Camera, Wrench, Shield, HardDrive, Printer, Mouse } from 'lucide-react';
+import {
+  Laptop,
+  Monitor,
+  Camera,
+  Wrench,
+  Shield,
+  HardDrive,
+  Printer,
+  Mouse,
+} from "lucide-react";
 
 interface ServiceCardProps {
   title: string;
@@ -13,9 +22,13 @@ function ServiceCard({ title, description, icon }: ServiceCardProps) {
         <div className="p-3 bg-yinmn-blue rounded-lg text-platinum group-hover:text-silver-lake transition">
           {icon}
         </div>
-        <h3 className="text-xl font-semibold text-platinum group-hover:text-silver-lake transition-colors">{title}</h3>
+        <h3 className="text-xl font-semibold text-platinum group-hover:text-silver-lake transition-colors">
+          {title}
+        </h3>
       </div>
-      <p className="text-sm text-silver-lake leading-relaxed group-hover:text-platinum transition-colors">{description}</p>
+      <p className="text-sm text-silver-lake leading-relaxed group-hover:text-platinum transition-colors">
+        {description}
+      </p>
     </div>
   );
 }
@@ -24,44 +37,52 @@ export default function OurServices() {
   const services = [
     {
       title: "PC & Laptop Repairs",
-      description: "Expert diagnosis and repair of hardware issues, component replacements, and performance optimization for all computer brands.",
-      icon: <Laptop className="w-6 h-6" />
+      description:
+        "Expert diagnosis and repair of hardware issues, component replacements, and performance optimization for all computer brands.",
+      icon: <Laptop className="w-6 h-6" />,
     },
     {
       title: "Hardware Sales",
-      description: "Quality computers, laptops, and accessories from trusted brands. Custom PC builds tailored to your needs.",
-      icon: <Monitor className="w-6 h-6" />
+      description:
+        "Quality computers, laptops, and accessories from trusted brands. Custom PC builds tailored to your needs.",
+      icon: <Monitor className="w-6 h-6" />,
     },
     {
       title: "Camera Systems",
-      description: "Installation, maintenance, and repair of security cameras and surveillance systems for homes and businesses.",
-      icon: <Camera className="w-6 h-6" />
+      description:
+        "Installation, maintenance, and repair of security cameras and surveillance systems for homes and businesses.",
+      icon: <Camera className="w-6 h-6" />,
     },
     {
       title: "Maintenance Services",
-      description: "Regular maintenance, cleaning, and optimization to keep your devices running smoothly and prevent future issues.",
-      icon: <Wrench className="w-6 h-6" />
+      description:
+        "Regular maintenance, cleaning, and optimization to keep your devices running smoothly and prevent future issues.",
+      icon: <Wrench className="w-6 h-6" />,
     },
     {
       title: "Software Solutions",
-      description: "OS installation, software updates, antivirus protection, and data backup services to keep your system secure.",
-      icon: <Shield className="w-6 h-6" />
+      description:
+        "OS installation, software updates, antivirus protection, and data backup services to keep your system secure.",
+      icon: <Shield className="w-6 h-6" />,
     },
     {
       title: "PC Parts",
-      description: "Wide range of computer components including RAM, storage drives, processors, and motherboards for upgrades and repairs.",
-      icon: <HardDrive className="w-6 h-6" />
+      description:
+        "Wide range of computer components including RAM, storage drives, processors, and motherboards for upgrades and repairs.",
+      icon: <HardDrive className="w-6 h-6" />,
     },
     {
       title: "Printer Services",
-      description: "Printer setup, repair, and maintenance. Quality printer supplies and consumables available.",
-      icon: <Printer className="w-6 h-6" />
+      description:
+        "Printer setup, repair, and maintenance. Quality printer supplies and consumables available.",
+      icon: <Printer className="w-6 h-6" />,
     },
     {
       title: "Accessories",
-      description: "High-quality keyboards, mice, headsets, webcams, and other peripherals to enhance your computing experience.",
-      icon: <Mouse className="w-6 h-6" />
-    }
+      description:
+        "High-quality keyboards, mice, headsets, webcams, and other peripherals to enhance your computing experience.",
+      icon: <Mouse className="w-6 h-6" />,
+    },
   ];
 
   return (
@@ -72,12 +93,13 @@ export default function OurServices() {
             Our Services
           </h2>
           <p className="text-silver-lake max-w-2xl mx-auto">
-            Comprehensive computer solutions for all your technology needs. From repairs to upgrades,
-            we&apos;ve got you covered with professional service and expert care.
+            Comprehensive computer solutions for all your technology needs. From
+            repairs to upgrades, we&apos;ve got you covered with professional
+            service and expert care.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <ServiceCard
               key={index}
